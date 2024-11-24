@@ -8,8 +8,8 @@ Adafruit_MCP4728 mcp;
 // Constants
 const int ANALOG_PIN = 18;  // GPIO18, ADC2_CH7
 const unsigned long LIGHT_CHANGE_INTERVAL = 10000;  // 10ms in microseconds
-const int LED_VALUE = 372;  // LED brightness value
-const unsigned long SAMPLE_INTERVAL = 50;  // 50 microseconds
+const int LED_VALUE = 310;  // LED brightness value
+const unsigned long SAMPLE_INTERVAL = 25;  // 25 microseconds
 
 // Variables for timing
 unsigned long lastSampleMicros = 0;

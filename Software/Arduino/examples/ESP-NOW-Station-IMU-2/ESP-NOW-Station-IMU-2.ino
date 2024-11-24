@@ -36,12 +36,8 @@ const unsigned long THROUGHPUT_TEST_DURATION = 5000; // 5 seconds test
 void setup() {
   Serial.begin(115200);
   
-  // Initialize IMU-related pins
-  pinMode(6, OUTPUT);
-  digitalWrite(6, HIGH);
-  
   // Initialize I2C
-  Wire.begin(3, 4);
+  Wire.begin();
   delay(100);
 
   // Initialize WiFi for ESP-NOW
