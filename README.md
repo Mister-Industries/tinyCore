@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Open Source Hardware](https://img.shields.io/badge/Hardware-Open%20Source-brightgreen)](https://www.oshwa.org/)
-[![Documentation Status](https://readthedocs.org/projects/iotacore/badge/?version=latest)](https://iotacore.readthedocs.io)
+[![Documentation Status]()]()
 
 </div>
 
@@ -23,16 +23,16 @@ The iotaCore is an open-source microcontroller platform designed for IoT applica
   - Bluetooth 5.0 LE
   - USB-C
 - **I/O**:
-  - 24 GPIO pins
-  - 8 Analog inputs
-  - 4 UART interfaces
-  - 2 I2C buses
-  - 2 SPI buses
+  - 6 Digital pins
+  - 6 Analog inputs
+  - 1 UART interface
+  - 1 I2C bus
+  - 1 SPI bus
 - **Power**: 
   - USB-C powered
   - LiPo battery support with charging circuit
   - Low power sleep modes
-- **Dimensions**: 45mm x 30mm
+- **Dimensions**: 50mm x 50mm
 
 ## Getting Started
 
@@ -41,40 +41,6 @@ The iotaCore is an open-source microcontroller platform designed for IoT applica
 1. Connect your iotaCore to your computer using a USB-C cable
 2. The onboard LED should pulse blue indicating proper power
 3. Your computer should recognize the device as a serial port
-
-### Software Installation
-
-```bash
-# Install the iotaCore CLI tools
-pip install iotacore-cli
-
-# Install required dependencies
-iotacore-cli install
-```
-
-### First Project
-
-```cpp
-#include <iotaCore.h>
-
-void setup() {
-    // Initialize LED on pin 13
-    pinMode(13, OUTPUT);
-}
-
-void loop() {
-    digitalWrite(13, HIGH);
-    delay(1000);
-    digitalWrite(13, LOW);
-    delay(1000);
-}
-```
-
-## Documentation
-
-- [Full Documentation](https://iotacore.readthedocs.io/)
-- [Examples](https://github.com/Mister-Industries/iotaCore/software/Arduino/)
-- [Hardware Design Files](https://github.com/Mister-Industries/iotaCore/Hardware)
 
 ## Hardware
 
@@ -102,23 +68,6 @@ The complete hardware design files are available in the [hardware repository](ht
 
 ## Development
 
-### Building from Source
-
-```bash
-# Clone the repository
-git clone https://github.com/iotacore/iotacore.git
-
-# Install dependencies
-cd iotacore
-make deps
-
-# Build firmware
-make firmware
-
-# Build documentation
-make docs
-```
-
 ### Contributing
 
 We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on:
@@ -129,21 +78,17 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ## Community
 
-- [Discord Server](https://discord.gg/iotakit)
-- [Twitter](https://twitter.com/misterindustries)
+- [Discord Server]()
+- [Twitter]()
 
 ## License
 
-This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
-
-### Hardware License
-
-The hardware design files are released under the [CERN Open Hardware Licence Version 2 - Strongly Reciprocal](https://ohwr.org/cern_ohl_s_v2.txt).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
 Special thanks to:
-- The Arduino team for inspiration
+- The Adafruit team for inspiration
 - ARM for microcontroller architecture
 - All our open source contributors
 
