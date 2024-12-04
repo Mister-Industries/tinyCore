@@ -95,5 +95,4 @@ Special thanks to:
 ## Support
 
 - [Issue Tracker](https://github.com/iotacore/iotacore/issues)
-- [Commercial Support](https://iotacore.org/support)
-- Email: support@iotacore.org
+- Support Email: support@mr.industries
