@@ -78,7 +78,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ## Community
 
-- [Discord Server]()
+- [Discord Server](https://discord.gg/AccV9wfX)
 - [Twitter]()
 
 ## License
