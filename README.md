@@ -79,11 +79,15 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
+The iotaCore project thrives thanks to the generous support of our manufacturing and development partners:
+### --- PCBWay ---
+PCBWay provides exceptional PCB manufacturing services and has been instrumental in bringing iotaCore to life through their reliable prototyping capabilities.
 
 Special thanks to:
 - The Adafruit team for inspiration
-- PCBWay for a generous manufacturing sponsorship
 - All our open source contributors
+
+
 
 ## Support
 
