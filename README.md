@@ -48,7 +48,7 @@ The iotaCore is an open-source microcontroller platform designed for IoT applica
 
 ![iotaCore Schematic](assets/schematic.png)
 
-The complete hardware design files are available in the [hardware repository](https://github.com/Mister-Industries/iotaCore/Hardware), including:
+The complete hardware design files are available in the [hardware repository](https://github.com/Mister-Industries/iotaCore/tree/main/Hardware), including:
 - Schematic files 
 - PCB layout files (Altium/KiCad format)
 - Bill of Materials (BOM)
@@ -59,12 +59,6 @@ The complete hardware design files are available in the [hardware repository](ht
 
 | Pin | Function | Notes |
 |-----|----------|-------|
-| D0  | UART RX  | Serial communication |
-| D1  | UART TX  | Serial communication |
-| D2-D12 | GPIO | Digital I/O |
-| A0-A7 | Analog Input | 12-bit ADC |
-| SCL | I2C Clock | I2C Bus 0 |
-| SDA | I2C Data | I2C Bus 0 |
 
 ## Development
 
@@ -79,7 +73,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 ## Community
 
 - [Discord Server](https://discord.gg/AccV9wfX)
-- [Twitter]()
+- [Bluesky](https://bsky.app/profile/mr.industries)
 
 ## License
 
@@ -89,7 +83,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Special thanks to:
 - The Adafruit team for inspiration
-- ARM for microcontroller architecture
+- PCBWay for a generous manufacturing sponsorship
 - All our open source contributors
 
 ## Support
