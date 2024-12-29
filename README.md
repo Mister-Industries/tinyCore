@@ -9,6 +9,11 @@
 
 </div>
 
+![image](https://github.com/user-attachments/assets/16b84b4e-978e-4d1d-b7d1-50d26df883d8)
+
+![image](https://github.com/user-attachments/assets/2e7e69f3-f873-4301-b462-13db0d8916a2)
+
+
 ## Overview
 
 The iotaCore is an open-source microcontroller platform designed for IoT applications, combining powerful processing capabilities with extensive connectivity options in a compact form factor.
@@ -81,6 +86,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgments
 The iotaCore project thrives thanks to the generous support of our manufacturing and development partners:
 ### --- PCBWay ---
+
 PCBWay provides exceptional PCB manufacturing services and has been instrumental in bringing iotaCore to life through their reliable prototyping capabilities. You can order our open-source designs directly from [their website](https://www.pcbway.com/project/shareproject/iota_The_Open_Source_Advanced_IoT_Learning_Platform_12776757.html)
 
 Special thanks to:
