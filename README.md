@@ -76,7 +76,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ## Community
 
-- [Discord Server](https://discord.gg/AccV9wfX)
+- [Discord Server](https://discord.gg/hvJZhwfQsF)
 - [Bluesky](https://bsky.app/profile/mr.industries)
 
 ## License
