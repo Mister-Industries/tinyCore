@@ -16,11 +16,12 @@ void setup() {
   }
   
   // Initialize IMU-related pins
-  //pinMode(6, OUTPUT);
-  //digitalWrite(6, HIGH);
+  pinMode(6, OUTPUT);
+  digitalWrite(6, HIGH);
   
   // Initialize I2C
-  Wire.begin();
+  Serial.println("Starting I2C initialization...");
+  Wire.begin(3, 4);
   delay(100);
 
   // Initialize SD card
@@ -46,14 +47,42 @@ void setup() {
     Serial.println("UNKNOWN");
   }
 
-  // Initialize LSM6DS3TR-C
-  Serial.println("Initializing LSM6DS3TR-C...");
+  Serial.println("Scanning for I2C devices...");
+  for (byte address = 1; address < 127; address++) {
+    Wire.beginTransmission(address);
+    byte error = Wire.endTransmission();
+    if (error == 0) {
+      Serial.print("I2C device found at address 0x");
+      if (address < 16) {
+        Serial.print("0");
+      }
+      Serial.println(address, HEX);
+      
+      // If this is our LSM6DS3TR-C address, try reading WHO_AM_I register
+      if (address == 0x6A) {
+        Wire.beginTransmission(0x6A);
+        Wire.write(0x0F);  // WHO_AM_I register address
+        Wire.endTransmission(false);
+        Wire.requestFrom(0x6A, 1);
+        if (Wire.available()) {
+          byte whoAmI = Wire.read();
+          Serial.print("WHO_AM_I register value: 0x");
+          Serial.println(whoAmI, HEX);
+          // Should be 0x6A for LSM6DS3TR-C
+        }
+      }
+    }
+  }
+
+  Serial.println("Attempting to initialize LSM6DS3TR-C...");
   if (!lsm6ds3trc.begin_I2C()) {
     Serial.println("Failed to find LSM6DS3TR-C chip");
+    Serial.println("Check your wiring!");
     while (1) {
       delay(10);
     }
   }
+
   Serial.println("LSM6DS3TR-C Found!");
 
   // Configure IMU settings

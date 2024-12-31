@@ -65,6 +65,11 @@ void setup() {
   Serial.println("ESP-NOW communication starting...");
   NowSerial.begin(115200);
   Serial.println("You can now send data to the peer device using the Serial Monitor.\n");
+
+  Serial.println("Commands:");
+  Serial.println("'s' - Start IMU data transmission");
+  Serial.println("'t' - Run throughput test");
+  Serial.println("'x' - Stop current operation");
 }
 
 void loop() {

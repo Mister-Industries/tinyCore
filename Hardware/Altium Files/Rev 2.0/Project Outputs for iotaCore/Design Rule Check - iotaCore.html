@@ -1,0 +1,497 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD23\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12/29/2024</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">3:47:17 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc" class="file"><acronym title="C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc">C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">2</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Waived Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">30</td></tr>
+</table>
+</td>
+</table><a name="IDNRVRGGVNYMUAEODZ5H1JI5HJCFGSSMNPOWMGYZKLQEVI3QWYOPRD"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBZXVHUOT54Z4EO3MMP1BJHDJQKQBMW2LHIWIGTOU22A54DWWMA0C">Clearance Constraint (Gap=8mil) (OnLayer('Bottom Layer')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXWAWL20BHQWOO1UJ25KQTGMZRCLIS5YIFCYBQQPV215GYVGXVH4L">Clearance Constraint (Gap=7.874mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0H2AGRNDQMXSNQMQWTR32CHG3DAZEMTJ2ERYRHNBESCNFAVSA4X">Clearance Constraint (Gap=8mil) (OnLayer('Top Layer')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOSPZJCIZP4VHKT1KMFULTCKZCCNAUM4ZYS2YJ1BPAQF0A3O4GCSL">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJ2LMV3O3PVDBB5AXXYO0XFDBIK2QAMDB01CYYLDR5QZV0FWLU4CL">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDWDIJ4UAJCRISBYL2N4G3FN3R0HU5ARQRFRZZWRH0OPBPUEJLU1UJ">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID4JQW2JT5DO3YNT1ICVQS2XFLSK1QVYYAZDE0WZOWT3FPRLK1R13N">Width Constraint (Min=10mil) (Max=20mil) (Preferred=20mil) (InNetClass('IMP'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDPNDNN4FMH2IUIOUIOWXTNLO33KEQZYSLRT4WP4NBK2DAS4QST2MK">Width Constraint (Min=3.5mil) (Max=100mil) (Preferred=6mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTQTKQGAYXTMUIXWMB33PHZKUENKITL25CS2P0ZEW1GZBJRRUILVM">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHWUEP354RS3JPFFCSXZ1V22OOBHA404C5JO1COEUXZDYREFCHQNC">Minimum Annular Ring (Minimum=3mil) (All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2Y5NUOIX0QXJFBF230DVAAEDEIFQSIWSIP4BIVSB2PFZXTJTZVM">Hole Size Constraint (Min=7.874mil) (Max=248.031mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1LSLHYJXKTQNON2J01PWT2J4EIN5L2ENPUFGXLFH0CJIJXU4EHGO">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDO1JW0PKZAUXKPVYY2ZH13JXDKVFVDMO4PDB1SN5RUYVSSMWBCTO">Minimum Solder Mask Sliver (Gap=3.937mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXAAQCTJUPLY1FKU5CPBWTH5MVIWHB3ZWXQV1VWCH4S4JR2ZSEQ1C">Silk To Solder Mask (Clearance=3.937mil) (IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2XU2JERCIWMZEATHVWKH21QZ1PSLB3QPAB1XTJKMP3TTJBQKBDLO">Silk to Silk (Clearance=3.937mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDK41AC0NM1KDAPLJLR4HVSG3STDHI0GXOKNKQ2EIIUOWYCB5GXBJI">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHGGNUDQDH5ZYCI1NBUEKXRIS2JU2BTHTUQ5CHKCT5VS4VZRPYUCJ">Board Clearance Constraint (Gap=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJ2M2NWT52Y5JJRGZMXESPQZUBGA0QZM3N15WXFSSJ5R5IUQAAXK">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">2</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Waived Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDC3ULF1DL21APFL4XAP5JPYCIUEDB1MQIVDXIJOKWWU2ZV0OSEBIK">Clearance Constraint (Gap=7.874mil) (All),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKNIVOVXVWRZSDYOBLYRA5QQZGF5MVLSJHE3QWUBMNNA3F0QOBNMN">Minimum Solder Mask Sliver (Gap=3.937mil) (All),(All)</a></td>
+<td class="column2">13</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDLMIWKW0CDJQOBBEPPZOOT52SFFJ044VVSEECITEPNO00H2HVPJGE">Silk To Solder Mask (Clearance=3.937mil) (IsPad),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXOM50K5TIWIOIL01ARHXPKUIJLQHBKMST2AHV0MXKANN12EDW2GL">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">7</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKW0XDDQIV15BD3B2MKPCQWG5IDMURI5Q2ZDLGRFQTRPY3CAGCFRE">Board Clearance Constraint (Gap=0mil) (All)</a></td>
+<td class="column2">7</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">30</td>
+</tr>
+</table><br><a name="ID2I010XQRX5QGELQ3XVLSUANJHFELS1ZSF4M0LCCBWAT5MDCJKCGK"><h2>Rule Violations</h2></a><a name="IDHWUEP354RS3JPFFCSXZ1V22OOBHA404C5JO1COEUXZDYREFCHQNC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Annular Ring (Minimum=3mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=608.111mil|Location2.X=612.361mil|Location1.Y=1089.903mil|Location2.Y=1094.153mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=608.111mil|Location2.X=612.361mil|Location1.Y=1089.903mil|Location2.Y=1094.153mil|Absolute=True">Minimum Annular Ring: (2.953mil &lt; 3mil) Pad Free-2(413.386mil,826.772mil) on Multi-Layer (Annular Ring=2.953mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1671.103mil|Location2.X=1675.353mil|Location1.Y=1089.903mil|Location2.Y=1094.153mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1671.103mil|Location2.X=1675.353mil|Location1.Y=1089.903mil|Location2.Y=1094.153mil|Absolute=True">Minimum Annular Ring: (2.953mil &lt; 3mil) Pad Free-5(1476.378mil,826.772mil) on Multi-Layer (Annular Ring=2.953mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDC5X5WCAVZ1GNPNS3SDLE4NR44OY0KFFPZYSAH4GVSF3LN3X5VRRD"><h2>Waived Violations</h2></a><a name="IDC3ULF1DL21APFL4XAP5JPYCIUEDB1MQIVDXIJOKWWU2ZV0OSEBIK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Clearance Constraint (Gap=7.874mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1571.656mil|Location2.X=1580.792mil|Location1.Y=608.699mil|Location2.Y=618.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1571.656mil|Location2.X=1580.792mil|Location1.Y=608.699mil|Location2.Y=618.323mil|Absolute=True">Clearance Constraint: (6.732mil &lt; 7.874mil) Between Hole of Pad J5-MH2(1391.077mil,405.272mil) on Multi-Layer And Pad J5-A1B12(1352.916mil,426.735mil) on Top Copper </acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:14:16 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1733.582mil|Location2.X=1743.534mil|Location1.Y=770.602mil|Location2.Y=779.726mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1733.582mil|Location2.X=1743.534mil|Location1.Y=770.602mil|Location2.Y=779.726mil|Absolute=True">Clearance Constraint: (6.781mil &lt; 7.874mil) Between Hole of Pad J5-MH1(1551.846mil,566.041mil) on Multi-Layer And Pad J5-B1A12(1531.079mil,604.898mil) on Top Copper </acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:14:20 PM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDKNIVOVXVWRZSDYOBLYRA5QQZGF5MVLSJHE3QWUBMNNA3F0QOBNMN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Minimum Solder Mask Sliver (Gap=3.937mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1577.144mil|Location2.X=1584.168mil|Location1.Y=611.521mil|Location2.Y=618.475mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1577.144mil|Location2.X=1584.168mil|Location1.Y=611.521mil|Location2.Y=618.475mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.85mil &lt; 3.937mil) Between Pad J5-A1B12(1352.916mil,426.735mil) on Top Copper And Pad J5-A4B9(1375.183mil,449.002mil) on Top Copper [Top Mask] Mask Sliver [0.85mil]</acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:17:45 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1554.127mil|Location2.X=1561.151mil|Location1.Y=588.505mil|Location2.Y=595.458mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1554.127mil|Location2.X=1561.151mil|Location1.Y=588.505mil|Location2.Y=595.458mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (2.97mil &lt; 3.937mil) Between Pad J5-A1B12(1352.916mil,426.735mil) on Top Copper And Pad J5-M1(1337.742mil,379.543mil) on Multi-Layer [Top Mask] Mask Sliver [2.97mil]</acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:17:48 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1599.412mil|Location2.X=1606.436mil|Location1.Y=633.79mil|Location2.Y=640.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1599.412mil|Location2.X=1606.436mil|Location1.Y=633.79mil|Location2.Y=640.743mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.855mil &lt; 3.937mil) Between Pad J5-A4B9(1375.183mil,449.002mil) on Top Copper And Pad J5-B8(1393.278mil,467.097mil) on Top Copper [Top Mask] Mask Sliver [0.855mil]</acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:18:04 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1627.253mil|Location2.X=1634.277mil|Location1.Y=661.63mil|Location2.Y=668.584mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1627.253mil|Location2.X=1634.277mil|Location1.Y=661.63mil|Location2.Y=668.584mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.85mil &lt; 3.937mil) Between Pad J5-A5(1407.201mil,481.019mil) on Top Copper And Pad J5-B7(1421.117mil,494.935mil) on Top Copper [Top Mask] Mask Sliver [0.85mil]</acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:18:04 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1613.333mil|Location2.X=1620.358mil|Location1.Y=647.711mil|Location2.Y=654.664mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1613.333mil|Location2.X=1620.358mil|Location1.Y=647.711mil|Location2.Y=654.664mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.86mil &lt; 3.937mil) Between Pad J5-A5(1407.201mil,481.019mil) on Top Copper And Pad J5-B8(1393.278mil,467.097mil) on Top Copper [Top Mask] Mask Sliver [0.86mil]</acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:18:04 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1655.091mil|Location2.X=1662.116mil|Location1.Y=689.469mil|Location2.Y=696.423mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1655.091mil|Location2.X=1662.116mil|Location1.Y=689.469mil|Location2.Y=696.423mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.85mil &lt; 3.937mil) Between Pad J5-A6(1435.039mil,508.858mil) on Top Copper And Pad J5-A7(1448.955mil,522.774mil) on Top Copper [Top Mask] Mask Sliver [0.85mil]</acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:18:04 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.172mil|Location2.X=1648.196mil|Location1.Y=675.55mil|Location2.Y=682.503mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1641.172mil|Location2.X=1648.196mil|Location1.Y=675.55mil|Location2.Y=682.503mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.86mil &lt; 3.937mil) Between Pad J5-A6(1435.039mil,508.858mil) on Top Copper And Pad J5-B7(1421.117mil,494.935mil) on Top Copper [Top Mask] Mask Sliver [0.86mil]</acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:18:04 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1669.011mil|Location2.X=1676.035mil|Location1.Y=703.389mil|Location2.Y=710.342mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1669.011mil|Location2.X=1676.035mil|Location1.Y=703.389mil|Location2.Y=710.342mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.86mil &lt; 3.937mil) Between Pad J5-A7(1448.955mil,522.774mil) on Top Copper And Pad J5-B6(1462.878mil,536.697mil) on Top Copper [Top Mask] Mask Sliver [0.86mil]</acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:18:04 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1696.85mil|Location2.X=1703.874mil|Location1.Y=731.227mil|Location2.Y=738.181mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1696.85mil|Location2.X=1703.874mil|Location1.Y=731.227mil|Location2.Y=738.181mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.86mil &lt; 3.937mil) Between Pad J5-A8(1476.794mil,550.613mil) on Top Copper And Pad J5-B5(1490.717mil,564.536mil) on Top Copper [Top Mask] Mask Sliver [0.86mil]</acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:18:04 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1682.93mil|Location2.X=1689.955mil|Location1.Y=717.308mil|Location2.Y=724.261mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1682.93mil|Location2.X=1689.955mil|Location1.Y=717.308mil|Location2.Y=724.261mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.85mil &lt; 3.937mil) Between Pad J5-A8(1476.794mil,550.613mil) on Top Copper And Pad J5-B6(1462.878mil,536.697mil) on Top Copper [Top Mask] Mask Sliver [0.85mil]</acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:18:04 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1733.04mil|Location2.X=1740.064mil|Location1.Y=767.417mil|Location2.Y=774.371mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1733.04mil|Location2.X=1740.064mil|Location1.Y=767.417mil|Location2.Y=774.371mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.85mil &lt; 3.937mil) Between Pad J5-B1A12(1531.079mil,604.898mil) on Top Copper And Pad J5-B4A9(1508.812mil,582.631mil) on Top Copper [Top Mask] Mask Sliver [0.85mil]</acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:18:04 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1737.805mil|Location2.X=1744.83mil|Location1.Y=808.684mil|Location2.Y=815.637mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1737.805mil|Location2.X=1744.83mil|Location1.Y=808.684mil|Location2.Y=815.637mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (2.97mil &lt; 3.937mil) Between Pad J5-B1A12(1531.079mil,604.898mil) on Top Copper And Pad J5-M2(1578.271mil,620.072mil) on Multi-Layer [Top Mask] Mask Sliver [2.97mil]</acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:18:10 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1710.771mil|Location2.X=1717.795mil|Location1.Y=745.149mil|Location2.Y=752.102mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1710.771mil|Location2.X=1717.795mil|Location1.Y=745.149mil|Location2.Y=752.102mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.855mil &lt; 3.937mil) Between Pad J5-B4A9(1508.812mil,582.631mil) on Top Copper And Pad J5-B5(1490.717mil,564.536mil) on Top Copper [Top Mask] Mask Sliver [0.855mil]</acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:18:10 PM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDLMIWKW0CDJQOBBEPPZOOT52SFFJ044VVSEECITEPNO00H2HVPJGE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Silk To Solder Mask (Clearance=3.937mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1129.887mil|Location2.X=1135.074mil|Location1.Y=824.71mil|Location2.Y=829.897mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1129.887mil|Location2.X=1135.074mil|Location1.Y=824.71mil|Location2.Y=829.897mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (1.457mil &lt; 3.937mil) Between Pad D1-1(959.646mil,611.811mil) on Top Copper And Track (919.646mil,636.181mil)(999.646mil,636.181mil) on Top Overlay [Top Overlay] to [Top Mask] clearance [1.457mil]</acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:18:52 PM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDXOM50K5TIWIOIL01ARHXPKUIJLQHBKMST2AHV0MXKANN12EDW2GL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Net Antennae (Tolerance=0mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1617.358mil|Location2.X=1658.362mil|Location1.Y=1604.563mil|Location2.Y=1667.688mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1617.358mil|Location2.X=1658.362mil|Location1.Y=1604.563mil|Location2.Y=1667.688mil|Absolute=True">Net Antennae: Via (1437.008mil,1424.213mil) from Top Copper to Bottom Copper </acronym></a><br>Waived by Geoffrey McIntyre at 12/29/2024 3:09:08 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1640.98mil|Location2.X=1681.985mil|Location1.Y=1265.98mil|Location2.Y=1329.105mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1640.98mil|Location2.X=1681.985mil|Location1.Y=1265.98mil|Location2.Y=1329.105mil|Absolute=True">Net Antennae: Via (1460.63mil,1085.63mil) from Top Copper to Bottom Copper </acronym></a><br>Waived by Geoffrey McIntyre at 12/29/2024 3:09:08 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1672.476mil|Location2.X=1713.481mil|Location1.Y=1532.713mil|Location2.Y=1595.837mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1672.476mil|Location2.X=1713.481mil|Location1.Y=1532.713mil|Location2.Y=1595.837mil|Absolute=True">Net Antennae: Via (1492.126mil,1352.362mil) from Top Copper to Bottom Copper </acronym></a><br>Waived by Geoffrey McIntyre at 12/29/2024 3:09:08 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=523.854mil|Location2.X=564.859mil|Location1.Y=1480.547mil|Location2.Y=1543.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=523.854mil|Location2.X=564.859mil|Location1.Y=1480.547mil|Location2.Y=1543.672mil|Absolute=True">Net Antennae: Via (343.504mil,1300.197mil) from Top Copper to Bottom Copper </acronym></a><br>Waived by Geoffrey McIntyre at 12/29/2024 3:09:08 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=890.98mil|Location2.X=931.985mil|Location1.Y=1327.004mil|Location2.Y=1390.129mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=890.98mil|Location2.X=931.985mil|Location1.Y=1327.004mil|Location2.Y=1390.129mil|Absolute=True">Net Antennae: Via (710.63mil,1146.653mil) from Top Copper to Bottom Copper </acronym></a><br>Waived by Geoffrey McIntyre at 12/29/2024 3:09:08 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=931.335mil|Location2.X=972.339mil|Location1.Y=1466.768mil|Location2.Y=1529.892mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=931.335mil|Location2.X=972.339mil|Location1.Y=1466.768mil|Location2.Y=1529.892mil|Absolute=True">Net Antennae: Via (750.984mil,1286.417mil) from Top Copper to Bottom Copper </acronym></a><br>Waived by Geoffrey McIntyre at 12/29/2024 3:09:08 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=933.303mil|Location2.X=974.307mil|Location1.Y=1567.161mil|Location2.Y=1630.286mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=933.303mil|Location2.X=974.307mil|Location1.Y=1567.161mil|Location2.Y=1630.286mil|Absolute=True">Net Antennae: Via (752.953mil,1386.811mil) from Top Copper to Bottom Copper </acronym></a><br>Waived by Geoffrey McIntyre at 12/29/2024 3:09:08 PM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDKW0XDDQIV15BD3B2MKPCQWG5IDMURI5Q2ZDLGRFQTRPY3CAGCFRE"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="waived">Board Clearance Constraint (Gap=0mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1601.638mil|Location2.X=1610.986mil|Location1.Y=260.695mil|Location2.Y=270.114mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1601.638mil|Location2.X=1610.986mil|Location1.Y=260.695mil|Location2.Y=270.114mil|Absolute=True">Board Outline Clearance(Outline Edge): (4.99mil &lt; 7.874mil) Between Board Edge And Track (1404.803mil,72.953mil)(1404.803mil,182.953mil) on Top Overlay </acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:21:16 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2075.105mil|Location2.X=2084.454mil|Location1.Y=735.653mil|Location2.Y=745.072mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2075.105mil|Location2.X=2084.454mil|Location1.Y=735.653mil|Location2.Y=745.072mil|Absolute=True">Board Outline Clearance(Outline Edge): (7.098mil &lt; 7.874mil) Between Board Edge And Track (1776.772mil,549.409mil)(1876.772mil,549.409mil) on Top Overlay </acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:21:16 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2075.105mil|Location2.X=2084.454mil|Location1.Y=735.653mil|Location2.Y=745.072mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2075.105mil|Location2.X=2084.454mil|Location1.Y=735.653mil|Location2.Y=745.072mil|Absolute=True">Board Outline Clearance(Outline Edge): (7.098mil &lt; 7.874mil) Between Board Edge And Track (1876.772mil,549.409mil)(1876.772mil,1349.409mil) on Top Overlay </acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:21:16 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=210.92mil|Location2.X=220.339mil|Location1.Y=735.106mil|Location2.Y=744.454mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=210.92mil|Location2.X=220.339mil|Location1.Y=735.106mil|Location2.Y=744.454mil|Absolute=True">Board Outline Clearance(Outline Edge): (7.454mil &lt; 7.874mil) Between Board Edge And Track (24.803mil,549.213mil)(124.803mil,549.213mil) on Top Overlay </acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:21:16 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=210.92mil|Location2.X=220.339mil|Location1.Y=735.106mil|Location2.Y=744.454mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=210.92mil|Location2.X=220.339mil|Location1.Y=735.106mil|Location2.Y=744.454mil|Absolute=True">Board Outline Clearance(Outline Edge): (7.454mil &lt; 7.874mil) Between Board Edge And Track (24.803mil,549.213mil)(24.803mil,1349.213mil) on Top Overlay </acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:21:16 PM</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=682.862mil|Location2.X=692.281mil|Location1.Y=260.787mil|Location2.Y=270.136mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=682.862mil|Location2.X=692.281mil|Location1.Y=260.787mil|Location2.Y=270.136mil|Absolute=True">Board Outline Clearance(Outline Edge): (4.093mil &lt; 7.874mil) Between Board Edge And Track (494.803mil,72.953mil)(1404.803mil,72.953mil) on Top Overlay </acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:21:16 PM</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=682.862mil|Location2.X=692.281mil|Location1.Y=260.787mil|Location2.Y=270.136mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Public\Documents\Altium\IoTa Core\iotaCore.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=682.862mil|Location2.X=692.281mil|Location1.Y=260.787mil|Location2.Y=270.136mil|Absolute=True">Board Outline Clearance(Outline Edge): (4.093mil &lt; 7.874mil) Between Board Edge And Track (494.803mil,72.953mil)(494.803mil,182.953mil) on Top Overlay </acronym></a><br>Waived by Geoffrey McIntyre at 9/25/2024 6:21:16 PM</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
