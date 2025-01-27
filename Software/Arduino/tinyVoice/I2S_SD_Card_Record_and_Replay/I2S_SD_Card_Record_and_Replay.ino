@@ -11,9 +11,9 @@
 #define I2S_MIC_SD      10
 
 // Speaker
-#define I2S_SPKR_BCLK   8
-#define I2S_SPKR_LRC    9
-#define I2S_SPKR_DIN    10
+#define I2S_SPKR_BCLK   SDA //3
+#define I2S_SPKR_LRC    TX //39
+#define I2S_SPKR_DIN    SCL //4
 
 // Constants for recording
 const int RECORD_TIME = 5;  // seconds to record
