@@ -1,4 +1,4 @@
-# tinyCore Microcontroller
+# tinyCore - A Better ESP32 Microcontroller
 
 <div align="center">
 
