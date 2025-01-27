@@ -1,8 +1,8 @@
-# iotaCore Microcontroller
+# tinyCore Microcontroller
 
 <div align="center">
 
-![iotaCore Logo](assets/iota-logo.png)
+![tinyCore Logo](assets/iota-logo.png)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Open Source Hardware](https://img.shields.io/badge/Hardware-Open%20Source-brightgreen)](https://www.oshwa.org/)
@@ -16,7 +16,7 @@
 
 ## Overview
 
-The iotaCore is an open-source microcontroller platform designed for IoT applications, combining powerful processing capabilities with extensive connectivity options in a compact form factor.
+The tinyCore is an open-source microcontroller platform designed for IoT applications, combining powerful processing capabilities with extensive connectivity options in a compact form factor.
 
 ### Key Features
 
@@ -42,7 +42,7 @@ The iotaCore is an open-source microcontroller platform designed for IoT applica
 
 ### Hardware Setup
 
-1. Connect your iotaCore to your computer using a USB-C cable
+1. Connect the tinyCore to your computer using a USB-C cable
 2. The onboard LED should pulse blue indicating proper power
 3. Your computer should recognize the device as a serial port
 
@@ -50,9 +50,9 @@ The iotaCore is an open-source microcontroller platform designed for IoT applica
 
 ### Schematic
 
-![iotaCore Schematic](assets/schematic.png)
+![tinyCore Schematic](assets/schematic.png)
 
-The complete hardware design files are available in the [hardware repository](https://github.com/Mister-Industries/iotaCore/tree/main/Hardware), including:
+The complete hardware design files are available in the [hardware repository](https://github.com/Mister-Industries/tinyCore/tree/main/Hardware), including:
 - Schematic files 
 - PCB layout files (Altium/KiCad format)
 - Bill of Materials (BOM)
@@ -84,10 +84,10 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
-The iotaCore project thrives thanks to the generous support of our manufacturing and development partners:
+The tinyCore project thrives thanks to the generous support of our manufacturing and development partners:
 ### --- PCBWay ---
 
-PCBWay provides exceptional PCB manufacturing services and has been instrumental in bringing iotaCore to life through their reliable prototyping capabilities. You can order our open-source designs directly from [their website](https://www.pcbway.com/project/shareproject/iota_The_Open_Source_Advanced_IoT_Learning_Platform_12776757.html)
+PCBWay provides exceptional PCB manufacturing services and has been instrumental in bringing tinyCore to life through their reliable prototyping capabilities. You can order our open-source designs directly from [their website](https://www.pcbway.com/project/shareproject/iota_The_Open_Source_Advanced_IoT_Learning_Platform_12776757.html)
 
 Special thanks to:
 - The Adafruit team for inspiration
@@ -97,5 +97,5 @@ Special thanks to:
 
 ## Support
 
-- [Issue Tracker](https://github.com/iotacore/iotacore/issues)
+- [Issue Tracker](https://github.com/tinycore/tinycore/issues)
 - Support Email: support@mr.industries
