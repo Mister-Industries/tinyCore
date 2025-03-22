@@ -1,4 +1,4 @@
-# tinyCore - A Better ESP32 Microcontroller
+# tinyCore - A Better ESP32 Starter Kit
 
 <div align="center">
 
@@ -16,26 +16,25 @@
 
 ## Overview
 
-The tinyCore is an open-source microcontroller platform designed for IoT applications, combining powerful processing capabilities with extensive connectivity options in a compact form factor.
+tinyCore is an engineering learning platform based around a truly open-source microcontroller designed to help educate individuals on the world of advanced embedded systems. tinyCore’s mission is to bridge the gap between undergrad and industry, equipping young professionals with the resources they need to build their portfolio and bring their ideas to life. 
 
 ### Key Features
 
-- **Processor**: ARM Cortex-M4 running at 120MHz
+- **Processor**: ESP32-S3 Mini Dual-Core No-PSRAM
 - **Memory**: 512KB Flash, 128KB RAM
 - **Connectivity**: 
-  - WiFi 802.11 b/g/n
-  - Bluetooth 5.0 LE
+  - WiFi & Bluetooth LE
   - USB-C
+  - 2x STEMMA/QWIIC I2C Connectors
+  - Micro SD Card Slot
 - **I/O**:
   - 6 Digital pins
   - 6 Analog inputs
-  - 1 UART interface
-  - 1 I2C bus
-  - 1 SPI bus
+  - UART/I2C/SPI Serial Buses
 - **Power**: 
   - USB-C powered
   - LiPo battery support with charging circuit
-  - Low power sleep modes
+  - Low power sleep modes, Dedicated I2C PWR Rail
 - **Dimensions**: 50mm x 50mm
 
 ## Getting Started
@@ -52,7 +51,7 @@ The tinyCore is an open-source microcontroller platform designed for IoT applica
 
 ![tinyCore Schematic](assets/schematic.png)
 
-The complete hardware design files are available in the [hardware repository](https://github.com/Mister-Industries/tinyCore/tree/main/Hardware), including:
+The complete hardware design files are available in the [hardware folder](https://github.com/Mister-Industries/tinyCore/tree/main/Hardware), including:
 - Schematic files 
 - PCB layout files (Altium/KiCad format)
 - Bill of Materials (BOM)
