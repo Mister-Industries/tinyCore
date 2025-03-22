@@ -10,28 +10,28 @@
 
 </div>
 
-![image](https://github.com/user-attachments/assets/16b84b4e-978e-4d1d-b7d1-50d26df883d8)
+ESP32-S3 chips are manufactured by Espressif®.
+> Espressif® is a trademark of Espressif Systems (Shanghai) Co.Ltd (https://www.espressif.com/).
 
-![image](https://github.com/user-attachments/assets/2e7e69f3-f873-4301-b462-13db0d8916a2)
+The tinyCore ESP32-S3 Board can be programmed with the Arduino® IDE.
+> Arduino® is a trademark of Arduino LLC (https://www.arduino.cc/).
 
 
 ## Overview
 
 tinyCore is an engineering learning platform based around a truly open-source microcontroller designed to help educate individuals on the world of advanced embedded systems. tinyCore’s mission is to bridge the gap between undergrad and industry, equipping young professionals with the resources they need to build their portfolio and bring their ideas to life. 
 
+## Pinout
+
 ### Key Features
 
 - **Processor**: ESP32-S3 Mini Dual-Core No-PSRAM
-- **Memory**: 512KB Flash, 128KB RAM
 - **Connectivity**: 
   - WiFi & Bluetooth LE
   - USB-C
   - 2x STEMMA/QWIIC I2C Connectors
   - Micro SD Card Slot
-- **I/O**:
-  - 6 Digital pins
-  - 6 Analog inputs
-  - UART/I2C/SPI Serial Buses
+  - Built-in LSM6DSO IMU
 - **Power**: 
   - USB-C powered
   - LiPo battery support with charging circuit
