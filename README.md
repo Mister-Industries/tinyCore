@@ -1,4 +1,4 @@
-# tinyCore - A Better ESP32 Starter Kit
+# tinyCore - A Better Way to Learn ESP32
 
 <div align="center">
 
