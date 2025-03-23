@@ -47,7 +47,7 @@ Open up the "START-HERE.pdf" document, or check out [our documentation](https://
 
 If you would like to get a tinyCore for yourself, please [visit our website](https://mr.industries/tiny-core) to purchase one!
 
-For Professors, tax-exempt organizations, and bulk orders (>10), please contact us through the following email address:
+For professors, tax-exempt organizations, or bulk orders (>10), please contact us through the following email address:
 [support@mr.industries](mailto:support@mr.industries)
 
 
