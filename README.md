@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Open Source Hardware](https://img.shields.io/badge/Hardware-Open%20Source-brightgreen)](https://www.oshwa.org/)
 
-![tinyCore Logo](assets/Photos/tinyCore-4Colors.png)
+![tinyCore Logo](assets/Photos/tinyCore-Quadrant.jpg)
 
 </div>
 
