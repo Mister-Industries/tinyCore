@@ -104,5 +104,3 @@ You can also send us an email to:
 [support@mr.industries](mailto:support@mr.industries)
 
 **Our team is committed to helping you succeed with your project every step of the way.**
-
-- [Issue Tracker](https://github.com/tinycore/tinycore/issues)
