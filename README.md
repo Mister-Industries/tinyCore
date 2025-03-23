@@ -98,7 +98,7 @@ MR.INDUSTRIES offers comprehensive technical support for everyone in our tinyCom
 * Replacement parts for defective components
 * Expert guidance for your tinyCore projects
 * Weekly "Office Hours" every Thursday at 4:30 MST on [Discord Server](https://discord.gg/hvJZhwfQsF)
-  * Direct access to our engineers through Discord voice
+  * Get 1-1 help from our engineers via Discord voice
 * Active community support through our [Discord](https://discord.gg/hvJZhwfQsF)
 
 You can also send us an email to:
