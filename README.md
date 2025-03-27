@@ -17,7 +17,7 @@ The tinyCore ESP32-S3 Board can be programmed with the Arduino® IDE.
 
 
 ## Overview
-![tinyCore Back/Front PCB](assets/Photos/tinyCoreBackFront.jpg)
+![tinyCore Back/Front PCB](assets/Photos/tinyCoreBackFront2.jpg)
 
 tinyCore is an engineering learning platform based around an "open-knowledge" microcontroller board designed to help educate individuals on the world of advanced embedded systems. tinyCore’s mission is to bridge the gap between undergrad and industry, equipping young professionals with the resources they need to build their portfolio and bring their ideas to life. 
 
