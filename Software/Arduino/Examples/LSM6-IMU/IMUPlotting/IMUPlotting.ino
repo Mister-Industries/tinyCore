@@ -1,6 +1,6 @@
-#include <Adafruit_LSM6DS3TRC.h>
+#include <Adafruit_LSM6DSOX.h>
 
-Adafruit_LSM6DS3TRC lsm6ds3trc;
+Adafruit_LSM6DSOX lsm6ds3trc;
 unsigned long lastSampleTime = 0;
 const unsigned long SAMPLE_INTERVAL = 25; // Sample every 25ms
 
