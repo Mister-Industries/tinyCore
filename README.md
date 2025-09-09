@@ -101,6 +101,10 @@ MR.INDUSTRIES offers comprehensive technical support for everyone in our tinyCom
   * Get 1-1 help from our engineers via Discord voice
 * Active community support through our [Discord](https://discord.gg/hvJZhwfQsF)
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Mister-Industries/tinyCore&type=Date)](https://www.star-history.com/#Mister-Industries/tinyCore&Date)
+
 You can also send us an email to:
 [support@mr.industries](mailto:support@mr.industries)
 
