@@ -1,9 +1,9 @@
-#include <Adafruit_LSM6DS3TRC.h>
+#include <Adafruit_LSM6DSOX.h>
 #include "FS.h"
 #include "SD.h"
 #include "SPI.h"
 
-Adafruit_LSM6DS3TRC lsm6ds3trc;
+Adafruit_LSM6DSOX lsm6ds3trc;
 File dataFile;
 const char* DATA_FILENAME = "/imu_data.txt";
 unsigned long lastLogTime = 0;
