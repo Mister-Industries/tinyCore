@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 0)
+  (lib (name "tinyCore-altium-import")(type "KiCad")(uri "${KIPRJMOD}/tinyCore-altium-import.kicad_sym")(options "")(descr ""))
+)
